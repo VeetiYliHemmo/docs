@@ -112,9 +112,31 @@ Note that this is just an example. Your message will be different.
 ```
 [vagrant-hostsupdater] Writing the following entries to (system32/drivers/etc/hosts)
 [vagrant-hostsupdater] exampleIP-address examplehostname
+<<<<<<< HEAD
+[vagrant-hostsupdater] This operation requires administrative access. 
+You may skip it by manually adding equivalent entries to the hosts file.
+```
+
+On some versions of Windows you might get a "Vt-x is not available" error. You'll need to disable Hyper-V in bios to proceed. *wip*
+
+=======
 [vagrant-hostsupdater] This operation requires administrative access.
 You may skip it by manually adding equivalent entries to the hosts file.
 ```
+>>>>>>> 87de51b9a26d6bfd03967f795af99a9a3cd449bf
 In theory, Seravo WordPress should work even without Cygwin installed, but we strongly recommend using Cygwin for doing WordPress development on Windows machines.
+
+Seravo WordPress can also be installed with PowerShell:
+
+1. [Install Git] (https://git-scm.com/downloads)
+2. [Install Vagrant](http://docs.vagrantup.com/v2/installation/) (version 2.0.4, or any other release before 2.1.0!)
+3. [Install Virtualbox](https://www.virtualbox.org/wiki/Download_Old_Builds_5_2) (version 5.2.26, or lower!)
+4. Clone this repo: `git clone https://github.com/Seravo/wordpress wordpress-dev`
+5. Run the installation in terminal:
+```
+cd wordpress-dev
+vagrant plugin install vagrant-hostsupdater vagrant-triggers vagrant-bindfs
+vagrant up
+```
 
 > **Optional:** [Vagrant Manager for Windows](http://vagrantmanager.com/windows/) can help you manage multiple Vagrant boxes.
